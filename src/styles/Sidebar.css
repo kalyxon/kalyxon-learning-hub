@@ -1,0 +1,150 @@
+/* ============================================
+   SIDEBAR COMPONENT STYLES
+   ============================================ */
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--spacing-xl);
+  gap: var(--spacing-xl);
+}
+
+.sidebar-header {
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-lg);
+}
+
+.sidebar-header h2 {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.tutorials-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  overflow-y: auto;
+}
+
+.tutorial-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  gap: var(--spacing-md);
+}
+
+.tutorial-item:hover {
+  background-color: rgba(255, 107, 53, 0.05);
+  border-color: var(--color-accent);
+}
+
+.tutorial-item.active {
+  background-color: rgba(255, 107, 53, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.tutorial-item.completed {
+  opacity: 0.7;
+}
+
+.tutorial-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.tutorial-category {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tutorial-title {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  word-break: break-word;
+}
+
+.tutorial-item-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: var(--color-gray);
+  transition: all var(--transition-fast);
+}
+
+.tutorial-item.active .tutorial-item-icon {
+  color: var(--color-accent);
+}
+
+.check-icon {
+  color: var(--color-success);
+}
+
+.sidebar-footer {
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+}
+
+/* ============== Responsive ============== */
+
+@media (max-width: 1024px) {
+  .sidebar-content {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar-content {
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-header h2 {
+    font-size: var(--font-size-h3);
+  }
+
+  .tutorial-item {
+    padding: var(--spacing-md);
+  }
+}

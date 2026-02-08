@@ -1,0 +1,1286 @@
+export const tutorialData = [
+  {
+    id: 'dsa-arrays',
+    title: 'Arrays in DSA',
+    category: 'DSA',
+    difficulty: 'Beginner',
+    content: `# Arrays in Data Structures & Algorithms
+
+## What is an Array?
+
+An array is a collection of elements stored in contiguous memory locations. It's one of the most fundamental data structures in computer science.
+
+### Key Characteristics:
+- **Fixed Size**: Arrays have a fixed size determined at creation
+- **Contiguous Memory**: Elements are stored in adjacent memory locations
+- **Zero-Indexed**: First element is at index 0
+- **Same Data Type**: All elements must be of the same type
+
+## Basic Operations
+
+### 1. Declaration and Initialization
+
+\`\`\`cpp
+// Declaration
+int arr[5]; // Array of 5 integers
+
+// Initialization
+int arr[5] = {1, 2, 3, 4, 5};
+
+// Dynamic array
+int* arr = new int[n];
+\`\`\`
+
+### 2. Access Elements
+
+\`\`\`cpp
+arr[0] = 10;  // Access first element
+int x = arr[2]; // Get value at index 2
+\`\`\`
+
+### 3. Traversal
+
+\`\`\`cpp
+// Using for loop
+for(int i = 0; i < 5; i++) {
+    cout << arr[i] << " ";
+}
+
+// Using range-based for loop (C++11)
+for(int element : arr) {
+    cout << element << " ";
+}
+\`\`\`
+
+## Time & Space Complexity
+
+| Operation | Time | Space |
+|-----------|------|-------|
+| Access | O(1) | O(1) |
+| Search | O(n) | O(1) |
+| Insertion | O(n) | O(1) |
+| Deletion | O(n) | O(1) |
+
+## Practice Problem
+
+Find the maximum element in an array:
+
+\`\`\`cpp
+int findMax(int arr[], int n) {
+    int max = arr[0];
+    for(int i = 1; i < n; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+// Usage
+int arr[] = {3, 7, 2, 9, 1};
+cout << findMax(arr, 5); // Output: 9
+\`\`\`
+
+## Common Array Algorithms
+
+### Linear Search
+\`\`\`cpp
+int linearSearch(int arr[], int n, int target) {
+    for(int i = 0; i < n; i++) {
+        if(arr[i] == target) return i;
+    }
+    return -1;
+}
+\`\`\`
+
+### Reverse Array
+\`\`\`cpp
+void reverseArray(int arr[], int n) {
+    int left = 0, right = n - 1;
+    while(left < right) {
+        swap(arr[left], arr[right]);
+        left++;
+        right--;
+    }
+}
+\`\`\`
+
+## Key Takeaways
+
+1. Arrays provide O(1) access to elements by index
+2. Arrays are cache-friendly due to contiguous memory
+3. Insertion and deletion require shifting elements
+4. Arrays have fixed size in most languages
+5. Perfect for storing homogeneous data
+
+## Next Steps
+
+Learn about **Linked Lists** to understand dynamic data structures!
+\`
+  },
+
+  {
+    id: 'cpp-basics',
+    title: 'C++ Fundamentals',
+    category: 'C++',
+    difficulty: 'Beginner',
+    content: \`# C++ Fundamentals
+
+## What is C++?
+
+C++ is a powerful, general-purpose programming language that provides low-level memory manipulation combined with high-level features. It's widely used in system software, game development, and competitive programming.
+
+## Setting Up Your Environment
+
+### Installation
+
+\`\`\`bash
+# Ubuntu/Debian
+sudo apt-get install g++
+
+# macOS
+brew install gcc
+
+# Windows
+# Download from https://www.mingw-w64.org/
+\`\`\`
+
+## Your First Program
+
+\`\`\`cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
+\`\`\`
+
+### Breaking It Down:
+- \`#include <iostream>\` - Include input/output library
+- \`using namespace std;\` - Use standard namespace
+- \`int main()\` - Entry point of program
+- \`cout\` - Output stream
+- \`endl\` - Newline character
+
+## Compilation and Running
+
+\`\`\`bash
+# Compile
+g++ -o hello hello.cpp
+
+# Run
+./hello
+\`\`\`
+
+## Variables and Data Types
+
+\`\`\`cpp
+// Integers
+int age = 25;
+short x = 100;
+long bigNumber = 1000000;
+
+// Floating Point
+float pi = 3.14f;
+double precise = 3.14159265359;
+
+// Character and String
+char letter = 'A';
+string name = "Kalyxon";
+
+// Boolean
+bool isLearning = true;
+\`\`\`
+
+## Operators
+
+### Arithmetic Operators
+\`\`\`cpp
+int a = 10, b = 3;
+cout << a + b;  // 13
+cout << a - b;  // 7
+cout << a * b;  // 30
+cout << a / b;  // 3
+cout << a % b;  // 1
+\`\`\`
+
+### Comparison Operators
+\`\`\`cpp
+int x = 5, y = 10;
+cout << (x > y);   // 0 (false)
+cout << (x < y);   // 1 (true)
+cout << (x == y);  // 0 (false)
+cout << (x != y);  // 1 (true)
+\`\`\`
+
+### Logical Operators
+\`\`\`cpp
+bool a = true, b = false;
+cout << (a && b);  // false (AND)
+cout << (a || b);  // true  (OR)
+cout << (!a);      // false (NOT)
+\`\`\`
+
+## Control Flow
+
+### If Statement
+\`\`\`cpp
+int score = 75;
+if(score >= 90) {
+    cout << "Grade: A";
+} else if(score >= 80) {
+    cout << "Grade: B";
+} else {
+    cout << "Grade: C";
+}
+\`\`\`
+
+### Loops
+\`\`\`cpp
+// for loop
+for(int i = 0; i < 5; i++) {
+    cout << i << " ";
+}
+
+// while loop
+int i = 0;
+while(i < 5) {
+    cout << i << " ";
+    i++;
+}
+
+// do-while loop
+int j = 0;
+do {
+    cout << j << " ";
+    j++;
+} while(j < 5);
+\`\`\`
+
+## Functions
+
+\`\`\`cpp
+// Function declaration
+int add(int a, int b);
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+
+// Function call
+int result = add(5, 3);
+cout << result;  // 8
+\`\`\`
+
+## Arrays
+
+\`\`\`cpp
+// Array declaration
+int numbers[5] = {1, 2, 3, 4, 5};
+
+// Access elements
+cout << numbers[0];  // 1
+
+// Modify elements
+numbers[0] = 10;
+
+// Array size
+int size = sizeof(numbers) / sizeof(numbers[0]);
+\`\`\`
+
+## Input from User
+
+\`\`\`cpp
+int age;
+string name;
+
+cout << "Enter your name: ";
+cin >> name;
+
+cout << "Enter your age: ";
+cin >> age;
+
+cout << "Hello, " << name << "!" << endl;
+\`\`\`
+
+## Key Concepts Summary
+
+| Concept | Example |
+|---------|---------|
+| Variable | \`int x = 10;\` |
+| Operator | \`a + b\` |
+| Condition | \`if(x > 5)\` |
+| Loop | \`for(int i=0; i<10; i++)\` |
+| Function | \`int add(int a, int b)\` |
+| Array | \`int arr[5];\` |
+
+## Next Steps
+
+- Learn about **Pointers and References**
+- Explore **Classes and Objects**
+- Master **Memory Management**
+\`
+  },
+
+  {
+    id: 'js-intro',
+    title: 'JavaScript Basics',
+    category: 'JavaScript',
+    difficulty: 'Beginner',
+    content: \`# JavaScript Basics
+
+## What is JavaScript?
+
+JavaScript is a versatile, dynamically-typed programming language that powers interactive web applications. Originally built for web browsers, it now runs on servers too with Node.js.
+
+## Setting Up
+
+### Browser Console
+Open any browser and press \`F12\` to access the Developer Console.
+
+### Node.js
+\`\`\`bash
+# Install Node.js from nodejs.org
+node --version
+node script.js
+\`\`\`
+
+## Hello World
+
+\`\`\`javascript
+console.log("Hello, World!");
+
+// In HTML
+document.write("Hello, World!");
+
+// In Alert
+alert("Hello, World!");
+\`\`\`
+
+## Variables and Data Types
+
+\`\`\`javascript
+// Variables
+var x = 10;      // Old way
+let y = 20;      // Preferred
+const z = 30;    // Constant
+
+// Data Types
+let number = 42;
+let decimal = 3.14;
+let text = "Hello";
+let bool = true;
+let arr = [1, 2, 3];
+let obj = {name: "John", age: 25};
+let nothing = null;
+let undef = undefined;
+
+// Check type
+console.log(typeof number);  // "number"
+\`\`\`
+
+## Operators
+
+### Arithmetic
+\`\`\`javascript
+let a = 10, b = 3;
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.333...
+console.log(a % b);  // 1
+console.log(a ** b); // 1000 (exponent)
+\`\`\`
+
+### String Operations
+\`\`\`javascript
+let str1 = "Hello";
+let str2 = "World";
+
+console.log(str1 + " " + str2);  // "Hello World"
+console.log(str1.length);         // 5
+console.log(str1.toUpperCase());  // "HELLO"
+\`\`\`
+
+## Control Flow
+
+### If-Else
+\`\`\`javascript
+let age = 20;
+
+if(age >= 18) {
+    console.log("Adult");
+} else if(age >= 13) {
+    console.log("Teenager");
+} else {
+    console.log("Child");
+}
+\`\`\`
+
+### Switch Statement
+\`\`\`javascript
+let day = "Monday";
+
+switch(day) {
+    case "Monday":
+        console.log("Start of week");
+        break;
+    case "Friday":
+        console.log("Almost weekend");
+        break;
+    default:
+        console.log("Regular day");
+}
+\`\`\`
+
+### Loops
+\`\`\`javascript
+// for loop
+for(let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// while loop
+let j = 0;
+while(j < 5) {
+    console.log(j);
+    j++;
+}
+
+// for...of (arrays)
+let arr = [10, 20, 30];
+for(let val of arr) {
+    console.log(val);
+}
+
+// forEach
+arr.forEach((val) => {
+    console.log(val);
+});
+\`\`\`
+
+## Functions
+
+\`\`\`javascript
+// Function declaration
+function greet(name) {
+    return "Hello, " + name;
+}
+
+// Function expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow function (ES6)
+const multiply = (a, b) => a * b;
+
+// Call functions
+console.log(greet("John"));     // "Hello, John"
+console.log(add(5, 3));         // 8
+console.log(multiply(4, 2));    // 8
+\`\`\`
+
+## Arrays
+
+\`\`\`javascript
+let arr = [1, 2, 3, 4, 5];
+
+// Access
+console.log(arr[0]);      // 1
+
+// Add element
+arr.push(6);              // Add at end
+arr.unshift(0);           // Add at start
+
+// Remove element
+arr.pop();                // Remove from end
+arr.shift();              // Remove from start
+
+// Methods
+console.log(arr.length);           // 5
+console.log(arr.includes(3));      // true
+console.log(arr.indexOf(3));       // 2
+console.log(arr.join("-"));        // "1-2-3-4-5"
+
+// Map and Filter
+let doubled = arr.map(x => x * 2);
+let even = arr.filter(x => x % 2 === 0);
+\`\`\`
+
+## Objects
+
+\`\`\`javascript
+let person = {
+    name: "John",
+    age: 25,
+    city: "New York",
+    greet: function() {
+        return "Hi, I'm " + this.name;
+    }
+};
+
+// Access properties
+console.log(person.name);
+console.log(person["age"]);
+
+// Modify properties
+person.age = 26;
+person.profession = "Developer";
+
+// Call methods
+console.log(person.greet());
+\`\`\`
+
+## Asynchronous JavaScript
+
+\`\`\`javascript
+// setTimeout
+setTimeout(() => {
+    console.log("Delayed message");
+}, 2000);
+
+// Promise
+let promise = new Promise((resolve, reject) => {
+    if(Math.random() > 0.5) {
+        resolve("Success!");
+    } else {
+        reject("Failed!");
+    }
+});
+
+promise.then(result => {
+    console.log(result);
+}).catch(error => {
+    console.log(error);
+});
+
+// async/await
+async function fetchData() {
+    try {
+        let response = await fetch("https://api.example.com");
+        let data = await response.json();
+        console.log(data);
+    } catch(error) {
+        console.log("Error:", error);
+    }
+}
+\`\`\`
+
+## Key Takeaways
+
+1. JavaScript is dynamically-typed
+2. Functions are first-class objects
+3. Arrays and objects are powerful
+4. Asynchronous programming is essential
+5. Always use \`let\` and \`const\` over \`var\`
+
+## Next Steps
+
+Learn **DOM Manipulation** and **Event Handling** to build interactive web pages!
+\`
+  },
+
+  {
+    id: 'oop-cpp',
+    title: 'OOP Concepts in C++',
+    category: 'OOP',
+    difficulty: 'Intermediate',
+    content: \`# Object-Oriented Programming (OOP) in C++
+
+## What is OOP?
+
+Object-Oriented Programming is a paradigm that organizes software design around objects and classes. It provides a way to structure code in a more modular and maintainable manner.
+
+## Core Pillars of OOP
+
+### 1. Encapsulation
+
+Encapsulation bundles data and methods together, hiding internal details.
+
+\`\`\`cpp
+class BankAccount {
+private:
+    double balance;
+    
+public:
+    BankAccount(double initial) : balance(initial) {}
+    
+    void deposit(double amount) {
+        if(amount > 0) {
+            balance += amount;
+        }
+    }
+    
+    void withdraw(double amount) {
+        if(amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+    
+    double getBalance() {
+        return balance;
+    }
+};
+
+// Usage
+BankAccount account(1000);
+account.deposit(500);
+cout << account.getBalance();  // 1500
+\`\`\`
+
+### 2. Inheritance
+
+Inheritance allows a class to inherit properties from another class.
+
+\`\`\`cpp
+class Animal {
+public:
+    void eat() {
+        cout << "Eating..." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Woof! Woof!" << endl;
+    }
+};
+
+// Usage
+Dog dog;
+dog.eat();   // Inherited from Animal
+dog.bark();  // Own method
+\`\`\`
+
+### 3. Polymorphism
+
+Polymorphism allows objects to take multiple forms through method overriding.
+
+\`\`\`cpp
+class Shape {
+public:
+    virtual void draw() {
+        cout << "Drawing Shape" << endl;
+    }
+    virtual ~Shape() {}
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Circle" << endl;
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    void draw() override {
+        cout << "Drawing Rectangle" << endl;
+    }
+};
+
+// Usage
+Circle c;
+Rectangle r;
+Shape* shape1 = &c;
+Shape* shape2 = &r;
+shape1->draw();  // Drawing Circle
+shape2->draw();  // Drawing Rectangle
+\`\`\`
+
+### 4. Abstraction
+
+Abstraction hides complex implementation details, exposing only essential features.
+
+\`\`\`cpp
+class MediaPlayer {
+public:
+    virtual void play() = 0;
+    virtual void pause() = 0;
+    virtual void stop() = 0;
+    virtual ~MediaPlayer() {}
+};
+
+class AudioPlayer : public MediaPlayer {
+public:
+    void play() override {
+        cout << "Playing audio..." << endl;
+    }
+    void pause() override {
+        cout << "Audio paused" << endl;
+    }
+    void stop() override {
+        cout << "Audio stopped" << endl;
+    }
+};
+\`\`\`
+
+## Classes and Objects
+
+\`\`\`cpp
+class Car {
+private:
+    string color;
+    int speed;
+    
+public:
+    // Constructor
+    Car(string c, int s) : color(c), speed(s) {}
+    
+    // Getters
+    string getColor() { return color; }
+    int getSpeed() { return speed; }
+    
+    // Setters
+    void setSpeed(int s) {
+        if(s >= 0) speed = s;
+    }
+    
+    // Methods
+    void accelerate() {
+        speed += 10;
+    }
+    
+    // Destructor
+    ~Car() {
+        cout << "Car destroyed" << endl;
+    }
+};
+
+// Usage
+Car myCar("Red", 100);
+myCar.accelerate();
+cout << myCar.getSpeed();  // 110
+\`\`\`
+
+## Constructors and Destructors
+
+\`\`\`cpp
+class Person {
+public:
+    string name;
+    
+    // Default constructor
+    Person() {
+        cout << "Default constructor" << endl;
+        name = "Unknown";
+    }
+    
+    // Parameterized constructor
+    Person(string n) {
+        cout << "Parameterized constructor" << endl;
+        name = n;
+    }
+    
+    // Copy constructor
+    Person(const Person& p) {
+        cout << "Copy constructor" << endl;
+        name = p.name;
+    }
+    
+    // Destructor
+    ~Person() {
+        cout << "Destructor called for " << name << endl;
+    }
+};
+\`\`\`
+
+## Static Members
+
+\`\`\`cpp
+class Counter {
+private:
+    static int count;
+    
+public:
+    Counter() {
+        count++;
+    }
+    
+    static int getCount() {
+        return count;
+    }
+};
+
+// Initialize static member
+int Counter::count = 0;
+
+// Usage
+Counter c1, c2, c3;
+cout << Counter::getCount();  // 3
+\`\`\`
+
+## Access Modifiers
+
+| Modifier | Class | Child | Outside |
+|----------|-------|-------|---------|
+| public | ✓ | ✓ | ✓ |
+| protected | ✓ | ✓ | ✗ |
+| private | ✓ | ✗ | ✗ |
+
+## Best Practices
+
+1. Use encapsulation to protect data
+2. Follow Single Responsibility Principle
+3. Use composition over inheritance
+4. Implement virtual destructors in base classes
+5. Use const correctly
+6. Prefer composition for "has-a" relationships
+7. Use inheritance for "is-a" relationships
+
+## Next Steps
+
+Learn about **Design Patterns** and **SOLID Principles**!
+\`
+  },
+
+  {
+    id: 'linked-list',
+    title: 'Linked Lists',
+    category: 'DSA',
+    difficulty: 'Intermediate',
+    content: \`# Linked Lists
+
+## What is a Linked List?
+
+A linked list is a linear data structure consisting of nodes, where each node contains data and a reference (link) to the next node.
+
+## Structure
+
+\`\`\`cpp
+struct Node {
+    int data;
+    Node* next;
+    
+    Node(int val) : data(val), next(nullptr) {}
+};
+\`\`\`
+
+## Basic Operations
+
+### Insertion at Beginning
+\`\`\`cpp
+void insertAtBeginning(Node*& head, int val) {
+    Node* newNode = new Node(val);
+    newNode->next = head;
+    head = newNode;
+}
+\`\`\`
+
+### Insertion at End
+\`\`\`cpp
+void insertAtEnd(Node*& head, int val) {
+    Node* newNode = new Node(val);
+    
+    if(head == nullptr) {
+        head = newNode;
+        return;
+    }
+    
+    Node* current = head;
+    while(current->next != nullptr) {
+        current = current->next;
+    }
+    current->next = newNode;
+}
+\`\`\`
+
+### Deletion
+\`\`\`cpp
+void deleteNode(Node*& head, int val) {
+    if(head == nullptr) return;
+    
+    if(head->data == val) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return;
+    }
+    
+    Node* current = head;
+    while(current->next != nullptr) {
+        if(current->next->data == val) {
+            Node* temp = current->next;
+            current->next = temp->next;
+            delete temp;
+            return;
+        }
+        current = current->next;
+    }
+}
+\`\`\`
+
+### Traversal
+\`\`\`cpp
+void display(Node* head) {
+    Node* current = head;
+    while(current != nullptr) {
+        cout << current->data << " -> ";
+        current = current->next;
+    }
+    cout << "nullptr" << endl;
+}
+\`\`\`
+
+## Advantages vs Disadvantages
+
+**Advantages:**
+- Dynamic size
+- No memory wastage
+- Easy insertion/deletion
+
+**Disadvantages:**
+- No random access
+- Extra memory for pointers
+- Cache-unfriendly
+
+## Time Complexity
+
+| Operation | Time |
+|-----------|------|
+| Access | O(n) |
+| Search | O(n) |
+| Insertion | O(1) |
+| Deletion | O(1) |
+
+## Complete Example
+
+\`\`\`cpp
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+class LinkedList {
+private:
+    Node* head;
+    
+public:
+    LinkedList() : head(nullptr) {}
+    
+    void append(int val) {
+        Node* newNode = new Node(val);
+        if(head == nullptr) {
+            head = newNode;
+            return;
+        }
+        Node* current = head;
+        while(current->next) current = current->next;
+        current->next = newNode;
+    }
+    
+    void display() {
+        Node* current = head;
+        while(current) {
+            cout << current->data << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+};
+
+// Usage
+int main() {
+    LinkedList list;
+    list.append(10);
+    list.append(20);
+    list.append(30);
+    list.display();  // 10 20 30
+    return 0;
+}
+\`\`\`
+
+## Key Takeaways
+
+1. Linked lists provide dynamic sizing
+2. No random access - must traverse from head
+3. Insertion and deletion are O(1) if position is known
+4. Useful when you don't know size in advance
+5. More memory overhead than arrays
+
+## Next Steps
+
+Learn about **Stacks and Queues** which use linked lists!
+\`
+  },
+
+  {
+    id: 'recursion',
+    title: 'Recursion Explained',
+    category: 'DSA',
+    difficulty: 'Intermediate',
+    content: \`# Recursion in Programming
+
+## What is Recursion?
+
+Recursion is when a function calls itself to solve smaller instances of the same problem until it reaches a base case.
+
+## Key Components
+
+1. **Base Case**: Condition to stop recursion
+2. **Recursive Case**: Function calling itself with smaller input
+3. **Trust**: Assume recursive call works correctly
+
+## Simple Examples
+
+### Factorial
+\`\`\`cpp
+int factorial(int n) {
+    // Base case
+    if(n <= 1) return 1;
+    
+    // Recursive case
+    return n * factorial(n - 1);
+}
+
+// factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
+\`\`\`
+
+### Fibonacci
+\`\`\`cpp
+int fibonacci(int n) {
+    if(n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// fibonacci(5) = 5
+\`\`\`
+
+### Power Function
+\`\`\`cpp
+int power(int base, int exp) {
+    if(exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+
+// power(2, 3) = 8
+\`\`\`
+
+## Recursion vs Iteration
+
+**Recursion:**
+- Elegant code
+- Risk of stack overflow
+- Might be inefficient
+
+**Iteration:**
+- Uses loops
+- More efficient
+- Less elegant for some problems
+
+## Memoization (Optimization)
+
+\`\`\`cpp
+#include <map>
+map<int, int> memo;
+
+int fibonacciMemo(int n) {
+    if(n <= 1) return n;
+    if(memo.find(n) != memo.end()) {
+        return memo[n];
+    }
+    memo[n] = fibonacciMemo(n - 1) + fibonacciMemo(n - 2);
+    return memo[n];
+}
+\`\`\`
+
+## Common Patterns
+
+### Binary Search
+\`\`\`cpp
+int binarySearch(int arr[], int left, int right, int target) {
+    if(left > right) return -1;
+    
+    int mid = (left + right) / 2;
+    if(arr[mid] == target) return mid;
+    
+    if(arr[mid] > target) {
+        return binarySearch(arr, left, mid - 1, target);
+    } else {
+        return binarySearch(arr, mid + 1, right, target);
+    }
+}
+\`\`\`
+
+### Tree Traversal
+\`\`\`cpp
+void inorder(Node* root) {
+    if(root == nullptr) return;
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+\`\`\`
+
+## Common Mistakes
+
+1. **No base case** - infinite recursion
+2. **Wrong base case** - incorrect results
+3. **Too deep** - stack overflow
+4. **Redundant calls** - use memoization
+
+## Key Takeaways
+
+1. Recursion makes complex problems simple
+2. Always define a base case
+3. Each recursive call should move toward base case
+4. Stack memory is limited
+5. Use memoization for overlapping subproblems
+
+## Next Steps
+
+Learn about **Trees and Graphs** which heavily use recursion!
+\`
+  },
+
+  {
+    id: 'binary-search',
+    title: 'Binary Search',
+    category: 'DSA',
+    difficulty: 'Intermediate',
+    content: \`# Binary Search Algorithm
+
+## What is Binary Search?
+
+Binary search is an efficient algorithm for finding an element in a **sorted array** by repeatedly dividing the search space in half.
+
+## Prerequisite
+
+- Array must be sorted
+- Works on any comparable data
+
+## Algorithm Steps
+
+1. Compare target with middle element
+2. If match, return index
+3. If target < middle, search left half
+4. If target > middle, search right half
+5. Repeat until found or array exhausted
+
+## Implementation
+
+### Iterative Approach
+\`\`\`cpp
+int binarySearch(int arr[], int n, int target) {
+    int left = 0, right = n - 1;
+    
+    while(left <= right) {
+        int mid = (left + right) / 2;
+        
+        if(arr[mid] == target) {
+            return mid;
+        }
+        else if(arr[mid] < target) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
+    }
+    return -1; // Not found
+}
+\`\`\`
+
+### Recursive Approach
+\`\`\`cpp
+int binarySearchRecursive(int arr[], int left, int right, int target) {
+    if(left > right) return -1;
+    
+    int mid = (left + right) / 2;
+    
+    if(arr[mid] == target) return mid;
+    else if(arr[mid] < target) {
+        return binarySearchRecursive(arr, mid + 1, right, target);
+    }
+    else {
+        return binarySearchRecursive(arr, left, mid - 1, target);
+    }
+}
+\`\`\`
+
+## Complexity Analysis
+
+- **Time Complexity**: O(log n)
+- **Space Complexity**: O(1) iterative, O(log n) recursive
+
+## Example
+
+\`\`\`cpp
+int arr[] = {2, 5, 8, 12, 16, 23, 38, 45, 56};
+cout << binarySearch(arr, 9, 23);  // Output: 5
+\`\`\`
+
+## Variations
+
+### Search for First Occurrence
+\`\`\`cpp
+int findFirst(int arr[], int n, int target) {
+    int left = 0, right = n - 1, result = -1;
+    
+    while(left <= right) {
+        int mid = (left + right) / 2;
+        if(arr[mid] == target) {
+            result = mid;
+            right = mid - 1;  // Keep searching left
+        } else if(arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return result;
+}
+\`\`\`
+
+### Search for Last Occurrence
+\`\`\`cpp
+int findLast(int arr[], int n, int target) {
+    int left = 0, right = n - 1, result = -1;
+    
+    while(left <= right) {
+        int mid = (left + right) / 2;
+        if(arr[mid] == target) {
+            result = mid;
+            left = mid + 1;  // Keep searching right
+        } else if(arr[mid] < target) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return result;
+}
+\`\`\`
+
+## Applications
+
+- Database indexing
+- Version control systems
+- Game development (collision detection)
+- Real-world search engines
+- Finding boundaries
+
+## Key Takeaways
+
+1. Binary search is exponentially faster than linear search
+2. Requires sorted data
+3. Divide and conquer approach
+4. Used everywhere in real applications
+5. Time complexity O(log n) is powerful
+
+## Next Steps
+
+Learn about **Sorting Algorithms** and **Trees**!
+\`
+  }
+];
+\`
