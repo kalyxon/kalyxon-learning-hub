@@ -26,7 +26,7 @@ A sophisticated, modern learning platform built with React for hosting education
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/kalyxon/kalyxon.git
+git clone https://github.com/kalyxon-learning-hub/kalyxon.git
 cd kalyxon
 npm install
 ```
